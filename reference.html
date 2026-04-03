@@ -1,241 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>References | Community Resource Hub</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* ===== NAV BAR ===== */
-        .top-bar {
-            background-color: #0f2a44;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .site-title {
-            color: white;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin-left: 25px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .nav-links a.active,
-        .nav-links a:hover {
-            border-bottom: 2px solid #f4b41a;
-        }
-
-        /* ===== PAGE HEADER ===== */
-        .page-header {
-            margin-top: 90px;
-            padding: 60px 30px;
-            text-align: center;
-            background-color: #ffffff;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s ease;
-        }
-
-        .page-header.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .page-header h1 {
-            font-size: 2.4rem;
-            margin-bottom: 12px;
-        }
-
-        .page-header p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: auto;
-        }
-
-        /* ===== REFERENCE CONTAINER ===== */
-        .reference-container {
-            max-width: 900px;
-            margin: 50px auto 90px;
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-
-        .reference-container.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reference-container h2 {
-            margin-bottom: 18px;
-            color: #0f2a44;
-        }
-
-        .reference-container ul {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .reference-container li {
-            margin-bottom: 14px;
-            line-height: 1.6;
-        }
-
-        .reference-container a {
-            color: #0f2a44;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .reference-container a:hover {
-            text-decoration: underline;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background-color: #0f2a44;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>References | UnitedPath Community Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D2137;--navy-mid:#163350;--teal:#0A8F72;--teal-light:#0DB890;--gold:#E8A020;--gold-light:#F5BE55;--bg:#F4F6F9;--surface:#FFFFFF;--text:#1A2332;--muted:#5A6878;--border:rgba(13,33,55,0.10);--shadow:0 8px 32px rgba(13,33,55,0.10);--radius:12px;--radius-lg:20px;--font-d:'Playfair Display',Georgia,serif;--font-b:'DM Sans',system-ui,sans-serif;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}body{font-family:var(--font-b);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{text-decoration:none;}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,33,55,0.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:62px;}
+.nav-brand{font-family:var(--font-d);font-size:1.4rem;color:#fff;font-weight:700;}
+.nav-brand span{color:#0DB890;}
+.nav-links{display:flex;gap:4px;list-style:none;align-items:center;}
+.nav-links a{color:rgba(255,255,255,0.78);font-size:0.9rem;font-weight:500;padding:7px 13px;border-radius:7px;transition:all 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,0.12);}
+.nav-links a.active{color:#F5BE55;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:2px;background:white;border-radius:2px;}
+.page-hero{padding:130px 28px 64px;background:linear-gradient(135deg,var(--navy) 0%,#1a4a6e 100%);text-align:center;color:white;}
+.page-hero .section-label{font-size:0.75rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#0DB890;margin-bottom:12px;}
+.page-hero h1{font-family:var(--font-d);font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:14px;}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,0.7);max-width:560px;margin:0 auto;}
+.ref-main{max-width:900px;margin:0 auto;padding:60px 28px 100px;}
+.ref-card{background:var(--surface);border-radius:var(--radius-lg);padding:40px 44px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:28px;}
+.ref-card-title{font-size:0.77rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.ref-card-title::after{content:'';flex:1;height:1px;background:var(--border);}
+.ref-list{list-style:none;}
+.ref-item{display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);}
+.ref-item:last-child{border-bottom:none;padding-bottom:0;}
+.ref-num{min-width:26px;height:26px;background:rgba(10,143,114,0.1);color:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;flex-shrink:0;margin-top:1px;}
+.ref-info{flex:1;}
+.ref-info .ref-title{font-weight:600;color:var(--navy);font-size:0.94rem;margin-bottom:3px;}
+.ref-info .ref-usage{font-size:0.84rem;color:var(--muted);margin-bottom:6px;}
+.ref-info a{color:var(--teal);font-size:0.84rem;font-weight:500;word-break:break-all;}
+.ref-info a:hover{text-decoration:underline;}
+.doc-card{background:var(--navy);border-radius:var(--radius-lg);padding:36px 44px;box-shadow:var(--shadow-lg);}
+.doc-card h3{font-family:var(--font-d);font-size:1.4rem;color:white;margin-bottom:8px;}
+.doc-card p{color:rgba(255,255,255,0.6);font-size:0.92rem;margin-bottom:24px;}
+.doc-links{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.doc-link{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:16px 18px;color:white;transition:all 0.2s;}
+.doc-link:hover{background:rgba(255,255,255,0.15);transform:translateY(-2px);}
+.doc-link-icon{font-size:1.4rem;flex-shrink:0;}
+.doc-link-text{font-size:0.88rem;}
+.doc-link-text strong{display:block;font-weight:700;margin-bottom:2px;color:var(--gold-light);}
+.doc-link-text span{color:rgba(255,255,255,0.55);}
+.about-card{background:var(--surface);border-radius:var(--radius-lg);padding:36px 44px;border:1px solid var(--border);margin-bottom:28px;}
+.about-card h3{font-family:var(--font-d);font-size:1.3rem;color:var(--navy);margin-bottom:10px;}
+.about-card p{color:var(--muted);font-size:0.95rem;line-height:1.75;}
+.about-card p+p{margin-top:10px;}
+.shadow-lg{box-shadow:0 24px 64px rgba(13,33,55,0.18);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.site-footer{background:var(--navy);color:rgba(255,255,255,0.5);padding:32px 28px;text-align:center;font-size:0.87rem;}
+.site-footer strong{color:var(--gold-light);}
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:62px;left:0;width:100%;background:var(--navy);padding:12px 20px 20px;gap:4px;}
+  .nav-links.open{display:flex;}
+  .hamburger{display:flex;}
+  .ref-card,.about-card,.doc-card{padding:24px 20px;}
+  .doc-links{grid-template-columns:1fr;}
+}
+</style>
 </head>
-
 <body>
 
-<!-- ===== NAV BAR ===== -->
-<header class="top-bar">
-    <div class="nav-container">
-        <div class="site-title">Community Resource Hub</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="directory.html">Resource Directory</a></li>
-                <li><a href="featured.html">Featured Resources</a></li>
-                <li><a href="submit.html">Submit a Resource</a></li>
-                <li><a href="reference.html" class="active">References</a></li>
-            </ul>
-        </nav>
-    </div>
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="Home.html" class="nav-brand">United<span>Path</span></a>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="directory.html">Resource Directory</a></li>
+      <li><a href="featured.html">Featured Resources</a></li>
+      <li><a href="submit.html">Submit a Resource</a></li>
+      <li><a href="reference.html" class="active" aria-current="page">References</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <p class="section-label">Sources &amp; Documentation</p>
+  <h1>References</h1>
+  <p>All image sources, data references, and required TSA competition documents are listed on this page.</p>
 </header>
 
-<!-- ===== PAGE HEADER ===== -->
-<section class="page-header animate">
-    <h1>References & Documentation</h1>
-    <p>
-        This page lists all sources used in creating the Community Resource Hub
-        website, including images, data, and materials requiring permission.
-    </p>
-</section>
+<main class="ref-main">
 
-<!-- ===== REFERENCE LIST ===== -->
-<div class="reference-container animate">
-    <h2>Sources & References</h2>
-    <ul>
-        <li>
-Google Maps            <a href="https://www.google.com/maps" target="_blank">Google Maps</a>
-        </li>
-        <li>
-Helping Hands Image            <a href="https://www.midlandtoday.ca/cares/news/for-the-next-three-days-have-your-donation-to-the-georgian-bay-food-network-matched-three-times-6219770" target="_blank">Helping Hands Image</a>
-        </li>
-        <li>
-WellCare Health Alliance Image            <a href="https://www.facebook.com/WellCareHealth/" target="_blank">WellCare Health Alliance</a>
-        </li>
-        <li>
-Future Steps Dayare Image            <a href="https://www.futurestepsdaycare.org/" target="_blank">Future Steps Dayare Image g</a>
-        </li>
-        <li>
-Family First network            <a href="https://careers.familiesfirstnetwork.org/" target="_blank">Family First network </a>
-        </li>
-        <li>
-Carelisting            <a href="https://carelistings.com/homecare/racine-wi/golden-path-services-ii/5ad3ac66f8caad06f126d596 " target="_blank">Carelisting </a>
-       </li>
- <li>
-Career Launch            <a href="       https://www.facebook.com/careerlaunchuk/" target="_blank">Career Launch </a>
-       </li>
- <li>
-    Helping Hands Featured            <a href="https://www.helpinghandstoday.org/ " target="_blank">Helping Hands Featured </a>
-       </li>
-       <li>
-   Banner 2            <a href="https://inside.scc.losrios.edu/collegewide/tutoring" target="_blank">Banner 2 </a>
-       </li>
+  <!-- ABOUT THE PROJECT -->
+  <div class="about-card reveal">
+    <h3>About the UnitedPath Project</h3>
+    <p>UnitedPath Community Hub was created entirely during the 2025–2026 school year by our TSA Webmaster team. All HTML, CSS, and JavaScript was written from scratch by team members — no website builder templates or pre-built themes were used.</p>
+    <p>All images used were sourced from publicly available platforms with attribution listed below. Framework systems were not used; the site was built with pure HTML, CSS, and vanilla JavaScript.</p>
+  </div>
 
+  <!-- IMAGE SOURCES -->
+  <div class="ref-card reveal" style="transition-delay:.1s">
+    <div class="ref-card-title">Image &amp; Media Sources</div>
+    <ul class="ref-list">
+      <li class="ref-item">
+        <div class="ref-num">1</div>
+        <div class="ref-info">
+          <div class="ref-title">Google Maps Embed API</div>
+          <div class="ref-usage">Used on: Home page — resource locator map section</div>
+          <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">https://www.google.com/maps</a>
+        </div>
+      </li>
+      <li class="ref-item">
+        <div class="ref-num">2</div>
+        <div class="ref-info">
+          <div class="ref-title">Helping Hands Food Network — Community Image</div>
+          <div class="ref-usage">Used on: Directory page (hh.png), Featured page (hh2.png)</div>
+          <a href="https://www.midlandtoday.ca/cares/news/for-the-next-three-days-have-your-donation-to-the-georgian-bay-food-network-matched-three-times-6219770" target="_blank" rel="noopener noreferrer">midlandtoday.ca — Georgian Bay Food Network</a>
+        </div>
+      </li>
+      <li class="ref-item">
+        <div class="ref-num">3</div>
+        <div class="ref-info">
+          <div class="ref-title">WellCare Health Alliance — Clinic Image</div>
+          <div class="ref-usage">Used on: Directory page (wellc.png)</div>
+          <a href="https://www.facebook.com/WellCareHealth/" target="_blank" rel="noopener noreferrer">facebook.com/WellCareHealth</a>
+        </div>
+      </li>
+      <li class="ref-item">
+        <div class="ref-num">4</div>
+        <div class="ref-info">
+          <div class="ref-title">FutureSteps Daycare — Educational Program Image</div>
+          <div class="ref-usage">Used on: Directory page (earlys.png)</div>
+          <a href="https://www.futurestepsdaycare.org/" target="_blank" rel="noopener noreferrer">futurestepsdaycare.org</a>
+        </div>
+      </li>
+      <li class="ref-item">
+        <div class="ref-num">5</div>
+        <div class="ref-info">
+          <div class="ref-title">Family First Network — Family Support Image</div>
+          <div class="ref-usage">Used on: Directory page (familynet.png)</div>
+          <a href="https://careers.familiesfirstnetwork.org/" target="_blank" rel="noopener noreferrer">careers.familiesfirstnetwork.org</a>
+        </div>
+      </li>
+      <li class="ref-item">
+        <div class="ref-num">6</div>
+        <div class="ref-info">
+          <div class="ref-title">GoldenPath Senior Services — Senior Programs Image</div>
+          <div class="ref-usage">Used on: Directory page (ggss.png)</div>
+          <a href="https://carelistings.com/homecare/racine-wi/golden-path-services-ii/5ad3ac66f8caad06f126d596" target="_blank" rel="noopener noreferrer">carelistings.com — Golden Path Services</a>
+        </div>
+      </li>
+      <li class="ref-item">
+        <div class="ref-num">7</div>
+        <div class="ref-info">
+          <div class="ref-title">CareerLaunch Employment Services — Job Training Image</div>
+          <div class="ref-usage">Used on: Directory page (career.png)</div>
+          <a href="https://www.facebook.com/careerlaunchuk/" target="_blank" rel="noopener noreferrer">facebook.com/careerlaunchuk</a>
+        </div>
+      </li>
+      <li class="ref-item">
+        <div class="ref-num">8</div>
+        <div class="ref-info">
+          <div class="ref-title">Helping Hands Featured Banner</div>
+          <div class="ref-usage">Used on: Featured Resources page</div>
+          <a href="https://www.helpinghandstoday.org/" target="_blank" rel="noopener noreferrer">helpinghandstoday.org</a>
+        </div>
+      </li>
+      <li class="ref-item">
+        <div class="ref-num">9</div>
+        <div class="ref-info">
+          <div class="ref-title">Education Banner — Tutoring Center Image</div>
+          <div class="ref-usage">Used on: Home page (Banner 2 / education.png)</div>
+          <a href="https://inside.scc.losrios.edu/collegewide/tutoring" target="_blank" rel="noopener noreferrer">inside.scc.losrios.edu — SCC Tutoring</a>
+        </div>
+      </li>
     </ul>
+  </div>
 
-    <h2>Required TSA Documents</h2>
-    <ul>
-        <li>
-            <a href="https://docs.google.com/document/d/1evfZWZ8lwqEo0lHlQpF6KZiAos8bpH6nMauQDjFUeZY/edit?tab=t.0" target="_blank">Work Log (PDF)</a>
-        </li>
-        <li>
-            <a href="https://docs.google.com/document/d/1OWisVrt9RzDyezEKMltSjGnFoRVlFG_J07M-DS_SHXI/edit?tab=t.0" target="_blank">
-                Student Copyright Checklist (PDF)
-            </a>
-        </li>
-    </ul>
-</div>
+  <!-- TSA DOCUMENTS -->
+  <div class="doc-card reveal shadow-lg" style="transition-delay:.2s">
+    <h3>Required TSA Competition Documents</h3>
+    <p>The following documents are required submissions for the TSA Webmaster competition. Click to open each document.</p>
+    <div class="doc-links">
+      <a href="https://docs.google.com/document/d/1evfZWZ8lwqEo0lHlQpF6KZiAos8bpH6nMauQDjFUeZY/edit?tab=t.0" target="_blank" rel="noopener noreferrer" class="doc-link">
+        <div class="doc-link-icon">📋</div>
+        <div class="doc-link-text">
+          <strong>Work Log</strong>
+          <span>Team member hours &amp; tasks</span>
+        </div>
+      </a>
+      <a href="https://docs.google.com/document/d/1OWisVrt9RzDyezEKMltSjGnFoRVlFG_J07M-DS_SHXI/edit?tab=t.0" target="_blank" rel="noopener noreferrer" class="doc-link">
+        <div class="doc-link-icon">©️</div>
+        <div class="doc-link-text">
+          <strong>Copyright Checklist</strong>
+          <span>Student copyright verification form</span>
+        </div>
+      </a>
+    </div>
+  </div>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-    <p>© 2026 Community Resource Hub | TSA Webmaster</p>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 <strong>UnitedPath Community Hub</strong> — Built for TSA Webmaster Competition, Pennsylvania State Conference</p>
 </footer>
 
-<!-- ===== SCROLL ANIMATION SCRIPT ===== -->
 <script>
-    const animatedElements = document.querySelectorAll('.animate');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-        });
-    }, { threshold: 0.2 });
-
-    animatedElements.forEach(el => observer.observe(el));
+document.getElementById('hamburger').addEventListener('click',function(){
+  const nl=document.getElementById('navlinks');
+  const o=nl.classList.toggle('open');
+  this.setAttribute('aria-expanded',o);
+});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
-
 </body>
 </html>
